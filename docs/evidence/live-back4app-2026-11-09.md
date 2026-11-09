@@ -11,3 +11,7 @@ App: spoke-astro (free plan), created fresh from back4app-templates/container-de
 - HTML /: 312 B gzip. TTFB (3 requests, illustrative): 1.375 / 1.174 / 1.204 s.
 
 Local measurements: docs/evidence/local-measurements-2026-11-06.md (583 MB image explained there: astro as a prod dependency + npm ci --omit=dev requirement of the "standalone" adapter).
+
+## Static variant, platform-validated (app spoke-astro-static, static branch commit 932dcc3, 2026-11-09)
+- Local: astro build (default static mode) emitted plain HTML; docker build + run served it; / returned 200 with the rendered h1.
+- Live: deployed from the static branch content; at 15:20:32 UTC the public URL served the version stamp, / returned 200 via nginx/1.27.5, HTML 312 B gzip. Both modes of this repo have now been deployed on the platform.
